@@ -85,10 +85,82 @@ php -S 127.0.0.1:8080 index.php
     你可以在任意的一个文件中包含
 
 
-    __RESOURCE_MAP__
+    {
+    "res": {
+        "static/mod.js": {
+            "uri": "/static/static/mod.js",
+            "type": "js"
+        },
+        "widget/body.tpl": {
+            "uri": "widget/body.tpl",
+            "type": "tpl"
+        },
+        "widget/footer.tpl": {
+            "uri": "widget/footer.tpl",
+            "type": "tpl"
+        },
+        "widget/header.css": {
+            "uri": "/static/widget/header.css",
+            "type": "css"
+        },
+        "widget/header.js": {
+            "uri": "/static/widget/header.js",
+            "type": "js"
+        },
+        "widget/header.tpl": {
+            "uri": "widget/header.tpl",
+            "type": "tpl",
+            "deps": [
+                "widget/header.css",
+                "widget/header.js"
+            ]
+        },
+        "widget/nav/nav.tpl": {
+            "uri": "widget/nav/nav.tpl",
+            "type": "tpl"
+        }
+    },
+    "pkg": {}
+}
 
 
-    字样，产出时这个结构就会替换 __RESOURCE_MAP__。
+    字样，产出时这个结构就会替换 {
+    "res": {
+        "static/mod.js": {
+            "uri": "/static/static/mod.js",
+            "type": "js"
+        },
+        "widget/body.tpl": {
+            "uri": "widget/body.tpl",
+            "type": "tpl"
+        },
+        "widget/footer.tpl": {
+            "uri": "widget/footer.tpl",
+            "type": "tpl"
+        },
+        "widget/header.css": {
+            "uri": "/static/widget/header.css",
+            "type": "css"
+        },
+        "widget/header.js": {
+            "uri": "/static/widget/header.js",
+            "type": "js"
+        },
+        "widget/header.tpl": {
+            "uri": "widget/header.tpl",
+            "type": "tpl",
+            "deps": [
+                "widget/header.css",
+                "widget/header.js"
+            ]
+        },
+        "widget/nav/nav.tpl": {
+            "uri": "widget/nav/nav.tpl",
+            "type": "tpl"
+        }
+    },
+    "pkg": {}
+}。
 
 **等等，标记了依赖我们的资源如何加载？**
 
